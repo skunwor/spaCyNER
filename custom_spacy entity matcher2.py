@@ -45,7 +45,7 @@ matched_sents = []  # Collect data of matched sentences to be visualized
 #matcher.add("ismovie", [pattern], on_match=collect_sents)  # add pattern
 matcher.add("ismovie", pattern, on_match=collect_sents)  # add pattern
 
-doc = nlp("I'd say X-men, by someone, is fantastic movie . , the film is a great one. –  godfather two/three at is not so cool movie, right?")
+doc = nlp("I'd say X-men, by someone, is fantastic movie . , the film is a great one.)
 matches = matcher(doc)
 matched_sents
 #displacy.render(matched_sents, style="ent", manual=True)
