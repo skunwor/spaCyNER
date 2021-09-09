@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Aug  1 19:15:36 2021
-
-@author: sujitk
-"""
 from spacy.matcher import Matcher
 matcher = Matcher(nlp.vocab)
 matched_sents = []  # Collect data of matched sentences to be visualized
@@ -12,9 +6,7 @@ def collect_sents(matcher, doc, i, matches):
     match_id, start, end = matches[i]
     span = doc[start:end]  # Matched span
     sent = span.sent  # Sentence containing matched span
-    # Append mock entity for match in displaCy style to matched_sents
-    # get the match span by ofsetting the start and end of the span with the
-    # start and end of the sentence in the doc
+    
     match_ents = [{
         "start": span.start_char - sent.start_char,
         "end": span.end_char - sent.start_char,
